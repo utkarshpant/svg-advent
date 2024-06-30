@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>SVG Experiments</title>
+		<meta charset="utf-8" />
+		<link
+			rel="preconnect"
+			href="https://fonts.googleapis.com"
+		/>
+		<link
+			rel="preconnect"
+			href="https://fonts.gstatic.com"
+			crossorigin
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital@0;1&family=IBM+Plex+Mono&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<style>
+		svg {
+			min-width: fit-content;
+		}
+		body {
+			padding: 0 2rem;
+			background: beige;
+			color: #1e1e1e;
+			font-family: 'EB Garamond', serif;
+			font-size: 1.5rem;
+		}
+
+		hr {
+			width: 100%;
+			border: 0;
+			height: 0.5px;
+			background: #1e1e1e;
+			margin: 2.5rem 0;
+		}
+
+		.ibm-plex-mono-regular {
+			font-family: 'IBM Plex Mono', monospace;
+			font-weight: 400;
+			font-style: normal;
+		}
+
+		.eb-garamond-uniquifier {
+			font-family: 'EB Garamond', serif;
+			font-optical-sizing: auto;
+			font-weight: 600;
+			font-style: normal;
+		}
+
+		code {
+			font-family: 'IBM Plex Mono', monospace;
+			font-weight: 400;
+			font-style: normal;
+			background: #1e1e1e25;
+			padding: 0.25rem 0.5rem;
+			border-radius: 0.25rem;
+		}
+
+		svg {
+			background-color: none;
+			border-radius: 0.25rem;
+			border: 2px dashed #1e1e1e50;
+			/* padding: 2rem; */
+		}
+
+		section {
+			display: flex;
+			flex-direction: row;
+			gap: 1rem;
+		}
+
+		p {
+			max-width: 80%;
+		}
+	</style>
+	<body>
+		<h1>Hello, World. This is an SVG experiment!</h1>
+		In this webpage, we're going to try and draw all kinds of SVG's.
+		<hr />
+		<h2>Exploring the <code>&lt;svg&gt;</code> tag.</h2>
+		<section>
+			<svg
+				height="100"
+				width="100"
+				viewBox="0 0 3 3"
+			>
+				<circle
+					cx="1.5"
+					cy="1.5"
+					r="1.5"
+					fill="black"
+				/>
+			</svg>
+
+			<p>
+				The <code>viewBox</code> attribute helps us define a coordinate system
+				<em>inside</em> the SVG element.
+			</p>
+		</section>
+
+		<h2>Day1: Drawing a Christmas ornament.</h2>
+		<section>
+			<svg
+				height="200"
+				width="200"
+				viewBox="-100 -100 200 200"
+			>
+				<circle
+					cx="0"
+					cy="20"
+					r="70"
+					fill="#D1495B"
+				/>
+				<rect
+					x="-17.5"
+					y="-65"
+					width="35"
+					height="20"
+					fill="#F79257"
+				/>
+				<circle
+					cx="0"
+					cy="-75"
+					r="12.5"
+					fill="none"
+					stroke="#F79257"
+					stroke-width="2"
+				/>
+			</svg>
+		</section>
+
+		<h2>Day 2: Drawing a Christmas tree.</h2>
+		<section>
+			<svg
+				height="400"
+				width="200"
+				viewBox="-100 -200 200 400"
+			>
+				<polygon
+					points="0,0 80,120 -80,120"
+					fill="#234236"
+				/>
+				<polygon
+					points="0,-50 60,60 -60,60"
+					fill="#0C5C4C"
+				/>
+				<polygon
+					points="0,-80 -40,0 40,0"
+					fill="#38755B"
+				/>
+				<rect
+					x="-15"
+					y="120"
+					width="30"
+					height="30"
+					fill="brown"
+				/>
+			</svg>
+		</section>
+		<h2>Day 3: Drawing a gingerbread man.</h2>
+		<section>
+			<svg
+				height="200"
+				width="200"
+				viewBox="-100 -100 200 200"
+			>
+				<!-- head -->
+				<circle
+					class="gb-head"
+					cx="0"
+					cy="-50"
+					r="30"
+				/>
+				<circle
+					class="gb-eye"
+					cx="-10"
+					cy="-55"
+					r="3"
+				/>
+				<circle
+					class="gb-eye"
+					cx="10"
+					cy="-55"
+					r="3"
+				/>
+				<rect
+					class="gb-mouth"
+					x="-10"
+					y="-40"
+					width="20"
+					height="5"
+					rx="2"
+				/>
+
+				<!-- body -->
+				<line
+					x1="-40"
+					y1="-10"
+					x2="40"
+					y2="-10"
+					class="gb-body"
+					stroke-linecap="round"
+				/>
+				<line
+					x1="0"
+					y1="0"
+					x2="25"
+					y2="40"
+					class="gb-body"
+					stroke-linecap="round"
+				/>
+				<line
+					x1="0"
+					y1="0"
+					x2="-25"
+					y2="40"
+					class="gb-body"
+					stroke-linecap="round"
+				/>
+
+				<!-- buttons -->
+				<circle
+					class="gh-button"
+					cx="0"
+					cy="-10"
+					r="5"
+				/>
+				<circle
+					class="gh-button"
+					cx="0"
+					cy="10"
+					r="5"
+				/>
+				<style>
+					.gb-head {
+						fill: #cd803d;
+					}
+
+					.gb-body {
+						stroke: #cd803d;
+						stroke-width: 30;
+					}
+
+					.gb-eye {
+						fill: white;
+					}
+
+					.gb-mouth {
+						stroke: white;
+						stroke-width: 2;
+						fill: none;
+					}
+				</style>
+			</svg>
+		</section>
+
+		<h2>Day 4: Drawing a house!</h2>
+		<section>
+			<svg
+				height="200"
+				width="200"
+				viewBox="-100 -100 200 200"
+			>
+				<!-- frame -->
+				<polygon
+					class="frame"
+					points="0,-70 -65,-10 -65,80 65,80 65,-10"
+				/>
+
+				<!-- roof -->
+				<polyline
+					class="roof"
+					points="-75,-8 0,-78 75,-8"
+				/>
+
+				<!-- stained glass window -->
+				<rect
+					class="window"
+					x="-15"
+					y="-35"
+					width="30"
+					height="30"
+					rx="15"
+				/>
+				<line
+					class="window"
+					x1="0"
+					y1="-35"
+					x2="0"
+					y2="-5"
+				/>
+				<line
+					class="window"
+					x1="-15"
+					y1="-20"
+					x2="15"
+					y2="-20"
+				/>
+
+				<!-- main window -->
+				<rect
+					class="window"
+					x="15"
+					y="10"
+					width="40"
+					height="35"
+					rx="4"
+				/>
+				<line
+					class="window"
+					x1="15"
+					y1="27"
+					x2="55"
+					y2="27"
+					stroke-width="2"
+				/>
+				<line
+					class="window"
+					x1="35"
+					y1="10"
+					x2="35"
+					y2="45"
+					stroke-width="2"
+				/>
+				<rect
+					class="windowsill"
+					x="13"
+					y="45"
+					height="5"
+					width="44"
+					rx="5"
+				/>
+
+				<!-- main door -->
+				<rect
+					class="door"
+					x="-45"
+					y="10"
+					width="30"
+					height="60"
+					rx="3"
+				/>
+				<circle
+					class="doorknob"
+					cx="-35"
+					cy="40"
+					r="2.5"
+				/>
+
+				<!-- stairs -->
+				<rect
+					class="stair"
+					x="-47"
+					y="70"
+					height="5"
+					width="34"
+				/>
+				<rect
+					class="stair"
+					x="-48"
+					y="74"
+					height="5"
+					width="36"
+				/>
+				<style>
+					.frame {
+						fill: none;
+						stroke: #1e1e1e;
+						stroke-width: 2px;
+						stroke-linecap: round;
+						stroke-linejoin: round;
+					}
+					.roof {
+						fill: none;
+						stroke: #d1495b;
+						stroke-width: 10px;
+						stroke-linecap: round;
+					}
+
+					.window {
+						fill: #fdea96;
+						stroke: #1e1e1e;
+						stroke-width: 2px;
+					}
+
+					.door,
+					.windowsill {
+						fill: #d1495b;
+						stroke: #1e1e1e;
+						stroke-width: 2px;
+					}
+
+					.doorknob {
+						fill: ivory;
+						stroke: #1e1e1e;
+						stroke-width: 2px;
+					}
+
+					.stair {
+						fill: grey;
+						stroke: #1e1e1e;
+						stroke-width: 2px;
+					}
+				</style>
+			</svg>
+			<p>This exercise will use <em>everything</em> we've learned so far!</p>
+		</section>
+		<h2>Day 5: Drawing simple paths.</h2>
+		<section style="display: flex; flex-direction: column">
+			<div style="display: flex; gap: 1rem">
+				<svg
+					height="200"
+					width="200"
+					viewBox="-100 -100 200 200"
+				>
+					<path
+						d="
+						M -40 -40
+						L 40 -40
+						M -40 0
+						L 40 0
+						M -40 40
+						L 40 40"
+						stroke="black"
+						stroke-width="25"
+						stroke-linecap="round"
+					/>
+				</svg>
+				<p>We'll be drawing simple paths using the <code>&lt;path&gt;</code> tag.</p>
+			</div>
+			<div style="display: flex; gap: 1rem">
+				<svg
+					height="200"
+					width="200"
+					viewBox="-100 -100 200 200"
+				>
+					<path
+						d="
+							M -80 0
+							L 80 0
+							M 80 0
+							L 20 -60
+							M 80 0
+							L 20 60"
+						stroke="#D1495B"
+						stroke-width="25"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+					/>
+				</svg>
+				<p>An arrow using the <code>&lt;path&gt;</code> tag.</p>
+			</div>
+		</section>
+	</body>
+</html>
